@@ -1,0 +1,16 @@
+const async = require('async');
+async.series([
+function(callback){
+console.log('Task1');
+callback(null,'Result1');
+},2000);
+},
+function(callback){
+setTimeout(function(){
+console.log('Task2');
+callback(null,'Result2');
+},1000);
+}
+],function(err,results){
+console.log(results);
+});
